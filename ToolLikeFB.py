@@ -21,7 +21,8 @@ class MainWindow(QMainWindow):
 
         self.ui.btn_start.clicked.connect(self.likepost)
         self.ui.ckb_all.clicked.connect(self.selectAll)
-        self.ui.spb_number.valueChanged.connect(self.select)
+        self.ui.spb_to.valueChanged.connect(self.select)
+        self.ui.spb_from.valueChanged.connect(self.select)
         self.ui.btn_getLink.clicked.connect(self.getListFriend)
         self.ui.btn_choose_file.clicked.connect(self.open_dialog)
         self.show()
@@ -39,14 +40,17 @@ class MainWindow(QMainWindow):
         for index in range(total):
             name = data.iloc[index]['Name']
             link = data.iloc[index]['Link']
+            stt = QLabel()
+            stt.setText(str(index))
             lk = QLabel()
             lk.setOpenExternalLinks(True)
             lk.setText("<a href='"+link+"'>"+link+"</a>")
             ckb = QCheckBox()
             ckb.setText(name)
+            self.ui.layout.addWidget(stt, index, 0)
+            self.ui.layout.addWidget(ckb, index, 1)
+            self.ui.layout.addWidget(lk, index, 2)
 
-            self.ui.layout.addWidget(ckb, index, 0)
-            self.ui.layout.addWidget(lk, index, 1)
             self.listName.append(ckb)
             self.listLink.append(link)
     def likepost(self):
@@ -84,12 +88,13 @@ class MainWindow(QMainWindow):
                 x.setChecked(False)
 
     def select(self):
-        n = int(self.ui.spb_number.text())
+        fr = int(self.ui.spb_from.text())
+        to = int(self.ui.spb_to.text())
         self.ui.ckb_all.setChecked(False)
-        if len(self.listName) >0:
+        if len(self.listName) > 0 and to > fr:
             for x in self.listName:
                 x.setChecked(False)
-            for i in range(n):
+            for i in range(fr, to+1):
                 self.listName[i].setChecked(True)
 
     def openChrome(self, username, passW):
