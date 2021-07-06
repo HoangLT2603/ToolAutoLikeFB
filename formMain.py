@@ -15,6 +15,9 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(849, 848)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("facebook-icon-48.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.scrollArea = QtWidgets.QScrollArea(self.centralwidget)
@@ -160,7 +163,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Tool FB Automation - Loan Nguyễn"))
         self.btn_start.setText(_translate("MainWindow", "Start"))
         self.ckb_all.setText(_translate("MainWindow", "All"))
         self.btn_getLink.setText(_translate("MainWindow", "Get list"))

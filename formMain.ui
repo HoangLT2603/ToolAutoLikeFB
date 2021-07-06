@@ -11,7 +11,11 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Tool FB Automation - Loan Nguyễn</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>facebook-icon-48.png</normaloff>facebook-icon-48.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QScrollArea" name="scrollArea">
