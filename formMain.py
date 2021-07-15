@@ -163,7 +163,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Tool FB Automation - Loan Nguyễn"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Tool FB Automation - Bùi Đức Dương"))
         self.btn_start.setText(_translate("MainWindow", "Start"))
         self.ckb_all.setText(_translate("MainWindow", "All"))
         self.btn_getLink.setText(_translate("MainWindow", "Get list"))
