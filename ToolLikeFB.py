@@ -74,6 +74,8 @@ class MainWindow(QMainWindow):
                             like.click()
                             sleep(2)
                             like.click()
+                    else:
+                        continue
                 except:
                     continue
                 sleep(random.randint(5, 15))
