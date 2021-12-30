@@ -122,7 +122,7 @@ class MainWindow(QMainWindow):
         if url == "":
             self.ui.notify.setText("Chưa nhập link !!")
         else:
-            self.openChrome("0328209917", "17133023@ute")
+            self.openChrome("username", "password")
             self.driver.get()
             sleep(2)
             last_height = self.driver.execute_script("return document.body.scrollHeight")
